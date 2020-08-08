@@ -5,6 +5,16 @@ import PropTypes from "prop-types";
 const Alert = props => {
 	//your component here
 
+	let nuevoColor = "";
+
+	if (props.color == "red") nuevoColor = "alert-danger";
+	else if (props.color == "orange") nuevoColor = "alert-warning";
+
+	return (
+		<div className={`alert ${nuevoColor}`} role="alert">
+			{props.text}
+		</div>
+	);
 };
 Alert.propTypes = {
 	color: PropTypes.string,
